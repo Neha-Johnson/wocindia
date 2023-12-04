@@ -19,6 +19,16 @@
             padding: 1em;
             text-align: center;
         }
+ #overlay {
+      display: none;
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background-color: rgba(0, 0, 0, 0.5);
+      z-index: 999;
+    }
 
         form {
             max-width: 600px;
@@ -69,9 +79,29 @@
             <input type="text" id="employeephonenumber" name="employeephonenumber" required>
              
 
-            <button type="submit">Add Employee</button>
+            <button onclick="closeLogin()" type="submit">Add Employee</button>
         </form>
     </section>
+<script>
+  function checkLogin() {
+    // Check if the user is logged in (you can implement your own logic here)
+    const isLoggedIn = false; // Replace with your actual login check
+
+    if (!isLoggedIn) {
+      // If not logged in, show the login pop-up
+      document.getElementById('login-container').style.display = 'block';
+      document.getElementById('overlay').style.display = 'block';
+    } else {
+      // If logged in, show the content (replace with your actual content logic)
+      alert('Showing the content...');
+    }
+  }
+
+  function closeLogin() {
+    document.getElementById('login-container').style.display = 'none';
+    document.getElementById('overlay').style.display = 'none';
+  }
+</script>
 
     <!-- Add any additional content or scripts as needed -->
 </body>
