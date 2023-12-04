@@ -7,7 +7,7 @@ const app = express();
 const port = process.env.PORT || 3000;
 
 // Connect to MongoDB
-mongoose.connect('mongodb://localhost:27017/my_database', { useNewUrlParser: true, useUnifiedTopology: true });
+mongoose.connect('mongodb://localhost:27017/wocindia_database', { useNewUrlParser: true, useUnifiedTopology: true });
 
 // Serve static files from the 'public' directory
 app.use(express.static(path.join(__dirname, 'public')));
