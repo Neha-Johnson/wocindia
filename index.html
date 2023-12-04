@@ -1,0 +1,387 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>WOCINDIA</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0 ;
+            padding: 0 ;
+            background-image: url('https://images2.minutemediacdn.com/image/upload/c_fill,g_auto,h_1248,w_2220/v1555358985/shape/mentalfloss/istock_000039944040_small.jpg?itok=RLd8rfJR'); /* Replace with the correct path to your background image */
+         /* Cover the entire viewport */
+            background-position: center; /* Center the background image */
+            background-repeat: no-repeat; /* Do not repeat the background image */
+        }
+        header {
+            background-color: rgba(51, 51, 51, 0.7); /* Add some transparency to the header */
+            color: #fff;
+            padding: 1em;
+            display: flex;
+            align-items: center;
+            text-align: center;
+            margin-top: 0px;
+        }
+
+        #logo {
+            width: 100px; /* Adjust the width as needed */
+            height: auto; /* Maintain aspect ratio */
+            margin-right: 10px; /* Adjust spacing as needed */
+        }
+        nav {
+            background-color: #333;
+            color: #fff;
+            text-align: center;
+            padding: 1em;
+	    overflow: hidden;
+        }
+
+        nav a {
+            color: #fff;
+            text-decoration: none;
+            margin: 0 20px;
+	    padding: 14px 1px;
+        }
+     nav a:hover {
+            background-color: #555;
+            color: white;
+	}
+	section 
+	{
+            max-width: 800px;
+            margin: 20px auto;
+            padding: 20px;
+            background-color: white;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+
+          .dropdown {
+            display: inline-block;
+        }
+
+        .dropdown-content {
+            display: none;
+            position: absolute;
+            background-color: #333;
+            min-width: 160px;
+            box-shadow: 0 8px 16px rgba(0,0,0,0.2);
+            z-index: 1;
+            list-style: none; /* Remove default list-style */
+    padding: 0;
+        }
+
+        .dropdown-content a {
+            color: #fff;
+            padding: 12px 16px;
+            display: block;
+            text-decoration: none;
+        }
+
+        .dropdown:hover .dropdown-content {
+            display: block;
+        }
+
+.login-popup {
+            display: none;
+            position: fixed;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            padding: 50px;
+            background-color: lightblue;
+            z-index: 1;
+        }
+
+        .login-popup input[type=text],
+        .login-popup input[type=password] {
+            width: 100%;
+            padding: 16px;
+            margin: 1px 10px;
+            display: inline-block;
+            border: 1px solid #ccc;
+            box-sizing: border-box;
+        }
+
+        .login-popup button {
+            background-color: green;
+            color: white;
+            padding: 15px 15px;
+            border: none;
+            cursor: pointer;
+        }
+.login-popup a {
+            color: #333;
+            text-decoration: none;
+        }
+        .close {
+            color: #aaa;
+            float: right;
+            font-size: 28px;
+            font-weight: bold;
+        }
+
+
+
+
+
+.signup-popup {
+            display: none;
+            position: fixed;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            padding: 20px;
+            background-color: #f1f1f1;
+            z-index: 1;
+        }
+
+        .signup-popup input[type=text],
+        .signup-popup input[type=tel],
+        .signup-popup input[type=password],
+        .signup-popup select {
+            width: 100%;
+            padding: 8px;
+            margin: 8px 0;
+            display: inline-block;
+            border: 1px solid #ccc;
+            box-sizing: border-box;
+        }
+
+        .signup-popup label {
+            display: block;
+            margin-top: 10px;
+        }
+
+        .signup-popup button {
+            background-color: #333;
+            color: white;
+            padding: 10px 15px;
+            border: none;
+            cursor: pointer;
+        }
+
+        .signup-popup a {
+            color: #333;
+            text-decoration: none;
+        }
+
+        p {
+            line-height: 1.6;
+        }
+
+        .job-listing {
+            border: 1px solid #ddd;
+            padding: 10px;
+            margin-bottom: 20px;
+        }
+        #search-section {
+            margin: 20px;
+        }
+
+        input, button {
+            padding: 0.5em;
+        }
+
+        button {
+            background-color: #333;
+            color: #fff;
+            cursor: pointer;
+        }
+
+        #results-section {
+            margin: 20px;
+        }
+        #enquiry-section {
+            background-color: rgba(0, 0, 0, 0.8);
+            color: #fff;
+            padding: 5px;
+            text-align: center;
+                        }
+        
+        footer {
+            color: #fff;
+            text-align: center;
+            padding: 1em;
+            position: fixed;
+            bottom: 0;
+            width: 100%;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <img id="logo" src="logo.png" alt="Logo"> <!-- Adjust the src attribute -->
+        <h1>WOCINDIA</h1>
+    </header>
+    <nav>
+        <a href="#">Home</a>
+        <a href="contact.html">Contact</a>
+        <div class="dropdown">
+            <button onclick="toggleSubMenu()" class="dropbtn">Job</button>
+            <div id="submenu" class="dropdown-content">
+               <li><a href="job-adding.html">job adding</a></li>
+                <li></li><a href="job searching.html">job searching</a></li>
+            </div>
+        </div>
+        <div class="dropdown">
+            <button onclick="toggleSubMenu('employee-submenu')" class="dropbtn">Employee</button>
+            <div id="employee-submenu" class="dropdown-content">
+                    <li><a href="employee-adding.html">Employee Adding</a></li>
+                    <li><a href="employee-list.html">Employee List</a></li>
+            </div>
+        </div>
+      <a href="#" onclick="openLoginPopup()">Login</a>
+	<a href="#" onclick="openSignupPopup()">Sign Up</a>
+    </nav>
+<div id="signupPopup" class="signup-popup">
+    <span class="close" onclick="closeSignupPopup()">&times;</span>
+    <h2>Sign Up</h2>
+    <form id="signupForm">
+        <label for="newUsername"><b>Username</b></label>
+        <input type="text" placeholder="Enter username" name="newUsername" required>
+        <label for="idProof"><b>Select ID Proof</b></label>
+        <select name="idProof" required>
+            <option value="passport">Passport</option>
+            <option value="driverLicense">Driver's License</option>
+            <!-- Add more options as needed -->
+        </select>
+        <label for="idNumber"><b>ID Number</b></label>
+        <input type="text" placeholder="Enter ID number" name="idNumber" required>
+
+        <label for="newEmail"><b>Email</b></label>
+        <input type="email" placeholder="Enter email" name="newEmail" required>
+
+        <label for="newPassword"><b>Password</b></label>
+        <input type="password" id="password" placeholder="Enter password" name="newPassword" required>
+        <br>
+        <label>
+            <input type="checkbox" id="showPassword" onclick="togglePasswordVisibility()"> Show Password
+        </label>
+
+        <button type="button" onclick="signup()">Sign Up</button>
+    </form>
+    <p>Already have an account? <a href="#" onclick="openLoginPopup()">Login</a></p>
+</div>
+
+
+
+
+
+<div id="loginPopup" class="login-popup">
+    <span class="close" onclick="closeLoginPopup()">&times;</span>
+    <h2>Login</h2>
+    <form>
+        <label for="username"><b>Username or Email</b></label>
+        <input type="text" placeholder="Enter username or email" name="username" required>
+
+        <label for="password"><b>Password</b></label>
+        <input type="password" placeholder="Enter password" name="password" required>
+
+        <button type="button" onclick="login()">Login</button>
+    </form>
+<p>Don't have an account? <a href="#" onclick="openSignUpPopup()">Sign Up</a></p>
+</div>
+
+
+
+
+    <section id="quote-section">
+        <h2>find your dream job now</h2>
+    </section>
+	 </section>
+    <section id="search">
+        <h2>Search Jobs</h2>
+        <!-- Add a search form and job listings here -->
+        <div class="job-listing">
+            <h3>store keeper</h3>
+            <p>Company: das&co </p>
+            <p>Location:kottarakara, kerala</p>
+            <p>Description: full time,20k salary package,food and accommodation available</p>
+            <a href="#">Apply Now</a>
+        </div>
+        <!-- Add more job listings as needed -->
+    </section>
+
+    <section id="post">
+        <h2>Post a Job</h2>
+        <!-- Add a form for posting jobs here -->
+    </section>
+
+    <section id="about">
+        <h2>About Us</h2>
+        <p>HI ,we have made this website for common people,even the illiterate people can register on our site with a phonecall</p>
+    </section>
+    <footer>
+        <p>&copy; SDG-no poverty</p>
+    </footer>
+    <script>
+ function openSignupPopup() {
+        document.getElementById('signupPopup').style.display = 'block';
+    }
+
+    function closeSignupPopup() {
+        document.getElementById('signupPopup').style.display = 'none';
+    }
+
+    function openLoginPopup() {
+        // Add logic to open the login popup
+        alert("Redirect to login form");
+    }
+
+    function signup() {
+        // You can add sign-up logic here
+        alert('Sign Up button clicked!');
+        closeSignupPopup();
+    }
+
+    function togglePasswordVisibility() {
+        var passwordInput = document.getElementById("password");
+        var showPasswordCheckbox = document.getElementById("showPassword");
+
+        if (showPasswordCheckbox.checked) {
+            passwordInput.type = "text";
+        } else {
+            passwordInput.type = "password";
+        }
+    }
+
+
+
+
+
+        function toggleSubMenu() {
+            var submenu = document.getElementById("submenu");
+            submenu.style.display = (submenu.style.display === "block") ? "none" : "block";
+        }
+function openLoginPopup() {
+        document.getElementById('loginPopup').style.display = 'block';
+    }
+
+    function closeLoginPopup() {
+        document.getElementById('loginPopup').style.display = 'none';
+    }
+
+    function openSignUpPopup() {
+        closeLoginPopup();
+        document.getElementById('signUpPopup').style.display = 'block';
+    }
+
+    function closeSignUpPopup() {
+        document.getElementById('signUpPopup').style.display = 'none';
+    }
+
+    function login() {
+        // You can add login logic here
+        alert('Login button clicked!');
+        closeLoginPopup();
+    }
+
+    function signUp() {
+        // You can add sign-up logic here
+        alert('Sign Up button clicked!');
+        closeSignUpPopup();
+    }
+    </script>
+</body>
+</html>

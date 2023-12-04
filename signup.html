@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login - WOCINDIA</title>
+    <style>
+        /* Your styles for the login page */
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-image: url('https://images2.minutemediacdn.com/image/upload/c_fill,g_auto,h_1248,w_2220/v1555358985/shape/mentalfloss/istock_000039944040_small.jpg?itok=RLd8rfJR');
+            background-position: center;
+            background-repeat: no-repeat;
+            background-size: cover; /* Ensure the background image covers the entire viewport */
+        }
+
+        header {
+            background-color: rgba(51, 51, 51, 0.7);
+            color: #fff;
+            padding: 1em;
+            display: flex;
+            align-items: center;
+            text-align: center;
+            margin-top: 0px;
+        }
+
+        form {
+            max-width: 400px;
+            margin: 20px auto;
+            padding: 20px;
+            background-color: rgb(173, 216, 230, 0.6);
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+
+        label {
+            display: block;
+            margin-bottom: 2px;
+            color: #333;
+        }
+
+        input {
+            width: 100%;
+            padding: 8px;
+            margin-bottom: 16px;
+            box-sizing: border-box;
+        }
+	#showPasswordLabel {
+            display: flex;
+            align-items: left;
+            margin-bottom: 8px;
+        }
+
+        #showPasswordCheckbox {
+            margin-right: -150px;
+        }
+        select {
+            width: 100%;
+            padding: 10px;
+            margin: 8px 0;
+            box-sizing: border-box;
+	}
+	nav {
+            background-color: #333;
+            color: #fff;
+            text-align: center;
+            padding: 1em;
+	    overflow: hidden;
+        }
+
+        nav a {
+            color: #fff;
+            text-decoration: none;
+            margin: 0 20px;
+	    padding: 14px 1px;
+        }
+     nav a:hover {
+            background-color: #555;
+            color: white;
+	}
+        button {
+            background-color: #333;
+            color: #fff;
+            padding: 10px;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+        }
+
+        footer {
+            color: #fff;
+            text-align: center;
+            padding: 1em;
+            position: fixed;
+            bottom: 0;
+            width: 100%;
+        }
+    </style>
+</head>
+<body>
+<header>
+        <img id="logo" src="C:\Users\johns\OneDrive\Desktop\woc india\logo.png" alt="Logo">
+        <h1>WOCINDIA</h1>
+    </header>
+<nav>
+        <a href="Woc.html">Home</a>
+        <a href="contact.html">Contact</a>
+</nav>
+     <form id="Signup Form" method="post">
+        <label for="username">Username:</label>
+        <input type="text" id="username" name="username" required>
+
+	<label for="Mobile">Mobile No:</label>
+        <input type="NUMBER" id="mobile" name="mobile" required>
+	
+	<label for="idProofType">Select ID Proof Type:</label>
+        <select id="idProofType" name="idProofType" required>
+            <option value="" disabled selected>Select ID Proof Type</option>
+            <option value="passport">Passport</option>
+	    <option value="Aadhar">Aadhar</option>
+            <option value="drivingLicense">Driving License</option>
+            <option value="nationalID">National ID</option>
+            <option value="other">Other</option>
+        </select>
+   
+
+	<label for="ID">ID Proof:</label>
+        <input type="ID" id="ID" name="ID" required>
+
+
+        <label for="email">Email:</label>
+        <input type="email" id="email" name="email" required>
+
+        <label for="password">Password:</label>
+        <input type="password" id="password" name="password" required>
+	<label for="password">Confirm Password:</label>
+        <input type="password" id="password" name="password" required>
+	<div id="showPasswordLabel">
+            <input type="checkbox" id="showPasswordCheckbox" onclick="togglePasswordVisibility()">
+            <label for="showPasswordCheckbox">Show Password</label>
+        </div>
+
+        <button type="submit" onclick="SignUp()">Sign Up</button>
+    </form>
+	 <footer>
+        <p>&copy; SDG-no poverty</p>
+    </footer>
+<script>
+        function signUp() {
+            // Get input values
+            var username = document.getElementById('username').value;
+	    var ID = document.getElementById('ID').value;
+	    var mobile = document.getElementById('mobile').value;
+            var email = document.getElementById('email').value;
+            var password = document.getElementById('password').value;
+
+            // Perform validation (you can add more complex validation as needed)
+            if (username === '' || email === '' || password === ''|| mobile === '' || ID === '' ) {
+                alert('Please fill in all fields');
+                return;
+            }
+
+            // Perform sign-up logic (you can send data to a server, etc.)
+            // For this example, we'll just log the values to the console
+            console.log('Username: ' + username);
+            console.log('Mobile No: ' + mobile);
+            console.log('ID Proof: ' + ID);
+            console.log('Email: ' + email);
+            console.log('Password: ' + password);
+
+            // You can add more logic here, like sending data to a server using AJAX
+        }
+		function togglePasswordVisibility() {
+            var passwordInput = document.getElementById('password');
+            var showPasswordCheckbox = document.getElementById('showPasswordCheckbox');
+
+            // Check the checkbox state
+            if (showPasswordCheckbox.checked) {
+                // Change the input type to 'text' to show the password
+                passwordInput.type = 'text';
+            } else {
+                // Change the input type back to 'password' to hide the password
+                passwordInput.type = 'password';
+            }
+        }
+    </script>
+</body>
+</html>

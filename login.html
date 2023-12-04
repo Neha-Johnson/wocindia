@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sign In - WOCINDIA</title>
+    <style>
+        /* Your styles for the login page */
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-image: url('https://images2.minutemediacdn.com/image/upload/c_fill,g_auto,h_1248,w_2220/v1555358985/shape/mentalfloss/istock_000039944040_small.jpg?itok=RLd8rfJR');
+            background-position: center;
+            background-repeat: no-repeat;
+            background-size: cover; /* Ensure the background image covers the entire viewport */
+        }
+
+        header {
+            background-color: rgba(51, 51, 51, 0.7);
+            color: #fff;
+            padding: 1em;
+            display: flex;
+            align-items: center;
+            text-align: center;
+            margin-top: 0px;
+        }
+
+        form {
+            max-width: 400px;
+            margin: 20px auto;
+            padding: 20px;
+             background-color: rgb(173, 216, 230, 0.6);
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+
+        label {
+            display: block;
+            margin-bottom: 8px;
+            color: #333;
+        }
+
+        input {
+            width: 100%;
+            padding: 8px;
+            margin-bottom: 16px;
+            box-sizing: border-box;
+        }
+	nav {
+            background-color: #333;
+            color: #fff;
+            text-align: center;
+            padding: 1em;
+	    overflow: hidden;
+        }
+
+        nav a {
+            color: #fff;
+            text-decoration: none;
+            margin: 0 20px;
+	    padding: 14px 1px;
+        }
+     nav a:hover {
+            background-color: #555;
+            color: white;
+	}
+
+        button {
+            background-color: #333;
+            color: #fff;
+            padding: 10px;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+        }
+
+        footer {
+            color: #fff;
+            text-align: center;
+            padding: 1em;
+            position: fixed;
+            bottom: 0;
+            width: 100%;
+        }
+	#showPasswordLabel {
+            display: flex;
+            align-items: center;
+            margin-bottom: 10px;
+        }
+
+        #showPasswordCheckbox {
+            margin-right: -150px;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <img id="logo" src="C:\Users\johns\OneDrive\Desktop\woc india\logo.png" alt="Logo">
+        <h1>WOCINDIA</h1>
+    </header>
+
+<nav>
+        <a href="Woc.html">Home</a>
+        <a href="contact.html">Contact</a>
+</nav>
+
+    <form id="loginForm">
+        <label for="username">Username or Email:</label>
+        <input type="text" id="username" name="username" required>
+
+        <label for="password">Password:</label>
+        <input type="password" id="password" name="password" required>
+	<div id="showPasswordLabel">
+            <input type="checkbox" id="showPasswordCheckbox" onclick="togglePasswordVisibility()">
+            <label for="showPasswordCheckbox">Show Password</label>
+        </div>
+	
+
+        <button type="button" onclick="login()">Login</button>
+    </form>
+
+    <footer>
+        <p>&copy; SDG-no poverty</p>
+    </footer>
+
+    <script>
+        function login() {
+            // Implement your login logic here
+            var username = document.getElementById('username').value;
+            var password = document.getElementById('password').value;
+
+            // Add your authentication logic here
+            if (username === 'yourUsername' && password === 'yourPassword') {
+                alert('Login successful! Redirecting to home page.');
+                window.location.href = 'home.html'; // Redirect to your home page
+            } else {
+                alert('Invalid username or password. Please try again.');
+            }
+        // Your script content, including the toggleSubMenu() and toggleLogin() functions
+        function toggleLogin() {
+            // Implement login toggle logic if needed
+            alert('Login button clicked!');
+        }
+        }
+	function togglePasswordVisibility() {
+            var passwordInput = document.getElementById('password');
+            var showPasswordCheckbox = document.getElementById('showPasswordCheckbox');
+
+            // Check the checkbox state
+            if (showPasswordCheckbox.checked) {
+                // Change the input type to 'text' to show the password
+                passwordInput.type = 'text';
+            } else {
+                // Change the input type back to 'password' to hide the password
+                passwordInput.type = 'password';
+            }
+        }
+    </script>
+</body>
+</html>

@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Employee Adding</title>
+    <!-- Add any additional styles or linked CSS files here -->
+    <style>
+        /* Your styles for the employee-adding and contact page */
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+        }
+
+        header {
+            background-color: #333;
+            color: #fff;
+            padding: 1em;
+            text-align: center;
+        }
+
+        form {
+            max-width: 600px;
+            margin: 20px auto;
+            padding: 20px;
+            background-color: #f4f4f4;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+
+        label {
+            display: block;
+            margin-bottom: 8px;
+        }
+
+        input {
+            width: 100%;
+            padding: 8px;
+            margin-bottom: 16px;
+            box-sizing: border-box;
+        }
+
+        button {
+            background-color: #333;
+            color: #fff;
+            padding: 10px;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Employee Adding</h1>
+    </header>
+
+    <section>
+        <h2>Employee Adding</h2>
+        <form action="#" method="POST" id="employeeForm">
+            <label for="employeeName">Employee Name:</label>
+            <input type="text" id="employeeName" name="employeeName" required>
+
+            <label for="employeePosition">Employee Position:</label>
+            <input type="text" id="employeePosition" name="employeePosition" required>
+
+            <label for="employeephonenumber">phone number:</label>
+            <input type="text" id="employeephonenumber" name="employeephonenumber" required>
+             
+
+            <button type="submit">Add Employee</button>
+        </form>
+    </section>
+
+    <!-- Add any additional content or scripts as needed -->
+</body>
+</html>
