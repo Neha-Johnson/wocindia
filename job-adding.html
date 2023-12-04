@@ -35,16 +35,6 @@
             padding: 1em;
             text-align: center;
         }
-    #overlay {
-      display: none;
-      position: fixed;
-      top: 0;
-      left: 0;
-      width: 100%;
-      height: 100%;
-      background-color: rgba(0, 0, 0, 0.5);
-      z-index: 999;
-    }
 
         button {
             background-color: #4caf50;
@@ -53,6 +43,15 @@
             border: none;
             border-radius: 4px;
             cursor: pointer;
+        }
+        body {
+            /* Set the background image URL and other properties */
+            background-image: url('https://media.istockphoto.com/id/1279104620/photo/top-view-of-a-white-desktop-concept-job-search.jpg?s=612x612&w=0&k=20&c=Ow_kvA2wQ4rLlqX_oFHgpjLb1JMKyPQKLOPzbu6w6qw=');
+            background-size: cover; /* Adjust to 'contain' if needed */
+            background-repeat: no-repeat;
+            background-attachment: fixed; /* Fixed for a fixed background */
+            /* Add additional styles if needed */
+        }
     </style>
 </head>
 <body>
@@ -77,33 +76,12 @@
 
             <!-- Add more fields as needed -->
 
-            <button onclick="checkLogin()" type="submit">Submit Job</button>
-<div id="overlay"></div>
+            <button type="submit">Submit Job</button>
         </form>
     </section>
 
     <footer>
         <p>&copy; 2023 WOCINDIA</p>
     </footer>
-<script>
-  function checkLogin() {
-    // Check if the user is logged in (you can implement your own logic here)
-    const isLoggedIn = false; // Replace with your actual login check
-
-    if (!isLoggedIn) {
-      // If not logged in, show the login pop-up
-      document.getElementById('openLoginPopup').style.display = 'block';
-      document.getElementById('overlay').style.display = 'block';
-    } else {
-      // If logged in, show the content (replace with your actual content logic)
-      alert('Showing the content...');
-    }
-  }
-
-  function closeLogin() {
-    document.getElementById('openLoginPopup').style.display = 'none';
-    document.getElementById('overlay').style.display = 'none';
-  }
-</script>
 </body>
 </html>
